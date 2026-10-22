@@ -1,0 +1,16 @@
+# The "Lately" numbers on the home page: each one counts up when it scrolls into view and links to where it came from.
+- value: 1200
+  label: tones a second, which is how fast Smoke Signal talks over a radio
+  url: /blog/2026/a-modem-in-a-web-page/
+- value: 32
+  label: bytes of key, split between the people you trust
+  url: /blog/2026/leaving-things-in-order/
+- value: 1624
+  label: neighbourhoods compared to find what predicts crime
+  url: /blog/2026/what-predicts-crime/
+- value: 165000
+  label: words of first draft from a local model, cut to 68,000 for the book
+  url: /blog/2026/ai-wrote-a-book/
+- value: 3
+  label: free tools, all running in your browser
+  url: "#projects"

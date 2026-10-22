@@ -1,0 +1,16 @@
+{%- assign posts = include.posts -%}
+{%- if posts.size > 0 -%}
+<ol class="posts">
+  {%- for post in posts -%}
+  <li{% if post.thumb or post.image %} class="has-thumb"{% endif %}>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time>
+    <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+    {%- assign thumb = post.thumb | default: post.image -%}
+    {%- if thumb %}<a class="thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ thumb | relative_url }}" alt="" loading="lazy" decoding="async"{% if post.thumb_position %} style="object-position: {{ post.thumb_position }}"{% endif %}></a>{% endif -%}
+    {%- if post.description %}<p>{{ post.description | escape }}</p>{% elsif post.excerpt %}<p>{{ post.excerpt | strip_html | normalize_whitespace | truncate: 180 }}</p>{% endif -%}
+  </li>
+  {%- endfor -%}
+</ol>
+{%- else -%}
+<p class="empty">Nothing here yet. Posts about radio, data and the odd thing I've built are on the way. Grab the <a href="{{ '/blog/feed.xml' | relative_url }}">feed</a> and you'll know when they land.</p>
+{%- endif -%}

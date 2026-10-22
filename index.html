@@ -1,0 +1,59 @@
+---
+layout: default
+body_class: home-page
+scripts: [/assets/js/signal.js, /assets/js/home.js]
+---
+<section class="intro" aria-labelledby="name">
+  <h1 id="name">droo-bin</h1>
+  <p class="lede">Engineer, writer, maker of things.</p>
+</section>
+
+<figure class="signal-figure">
+  {% include signal.html %}
+  <p class="signal-readout" id="signal-readout" aria-live="polite"></p>
+  <figcaption id="signal-caption">
+    <span>That squiggle is “<span id="signal-text">droo-bin</span>” sent as Bell 202 tones, the beeps and warbles packet radio uses to send data. Here each letter gets old-school start and stop bits, ten bits a letter: the tight wiggles are noughts, the lazy ones are ones. Point at a letter to see its bits.</span>
+    <div class="signal-controls">
+      <label class="signal-try" hidden><span class="vh">Send your own text</span><input type="text" id="signal-input" maxlength="16" placeholder="Type your own…" autocomplete="off" spellcheck="false"></label>
+      <button type="button" class="hear" id="hear" hidden>Have a listen</button>
+    </div>
+  </figcaption>
+</figure>
+
+<section class="about">
+  <p>I make free tools in my spare time and do things with data, then write about whatever turns up.</p>
+</section>
+
+<section class="numbers" aria-labelledby="numbers-h">
+  <h2 id="numbers-h">Lately</h2>
+  <ul class="tally">
+    {%- for n in site.data.numbers %}
+    <li><a href="{{ n.url | relative_url }}"><span class="count" data-to="{{ n.value }}">{{ n.value }}</span><span class="what">{{ n.label }}</span></a></li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="projects" id="projects" aria-labelledby="projects-h">
+  <h2 id="projects-h">Projects</h2>
+  <ul class="project-list">
+    {%- for p in site.data.projects %}
+    <li class="project">
+      <div class="project-head">
+        <h3><a href="{{ p.open }}">{{ p.name }}</a></h3>
+        {%- if p.glyph %}{% include glyphs/{{ p.glyph }}.html %}{% endif %}
+      </div>
+      <p class="what">{{ p.what }}</p>
+      <p class="for">{{ p.for }}</p>
+      <p class="links"><a href="{{ p.open }}">Open {{ p.name }}</a> <a href="{{ p.source }}">Source code</a></p>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="writing" aria-labelledby="writing-h">
+  <h2 id="writing-h">Writing</h2>
+  {% assign latest = site.posts | slice: 0, 3 %}
+  {% include post-list.html posts=latest %}
+  <p class="elsewhere">Older writing, from Kubernetes guides to why your dev team is not an in-tray, is <a href="{{ site.medium_url }}">on Medium</a>.</p>
+  {% if site.posts.size > 3 %}<p><a href="{{ '/blog/' | relative_url }}">All {{ site.posts.size }} posts</a></p>{% endif %}
+</section>

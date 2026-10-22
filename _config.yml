@@ -1,0 +1,43 @@
+# Site settings. GitHub Pages builds this with Jekyll: push to main and it's live.
+title: droo-bin
+author: droo-bin
+tagline: Engineer, writer, maker of things
+description: >-
+  droo-bin: engineer, writer and maker of things, including a radio modem in a web page, a legacy vault
+  and a data explorer.
+url: "https://droo-bin.github.io"
+baseurl: ""
+github_username: droo-bin
+medium_url: https://medium.com/@droo-bin
+lang: en-GB
+timezone: Europe/London
+
+# Blog posts live in _posts/ as YYYY-MM-DD-title.md and appear at /blog/YYYY/title/.
+permalink: /blog/:year/:title/
+excerpt_separator: "<!--more-->"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: blog/feed.xml
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .github
+  - tools

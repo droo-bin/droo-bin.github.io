@@ -1,0 +1,27 @@
+# The projects on the home page, in this order. Each needs a name, a line about what it is, and links.
+- name: Smoke Signal
+  glyph: smoke-signal
+  what: >-
+    A modem in a web page. It turns messages, photos and files into sound that any radio can carry, then
+    turns the sound back again. One offline file, no installs, no servers, and only a few dial-up noises.
+  for: For when the phone network and the internet have both taken the day off.
+  open: https://droo-bin.github.io/smoke-signal/
+  source: https://github.com/droo-bin/smoke-signal
+
+- name: Tallystick
+  glyph: tallystick
+  what: >-
+    Leave your affairs in order, sealed for the people you trust. The key gets split between them, so only
+    enough of them together can open what you leave behind.
+  for: For the conversation nobody wants to have, done properly.
+  open: https://tallystick.org.uk/
+  source: https://github.com/droo-bin/tallystick
+
+- name: Loupe
+  glyph: loupe
+  what: >-
+    Drop in a spreadsheet, CSV or log file and get an instant dashboard, the weird bits flagged, a forecast
+    and answers in plain English. It all runs in your browser.
+  for: For poking around in a spreadsheet to see what's in it.
+  open: https://droo-bin.github.io/loupe/
+  source: https://github.com/droo-bin/loupe
