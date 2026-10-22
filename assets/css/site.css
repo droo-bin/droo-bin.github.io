@@ -171,6 +171,15 @@ p { margin: 0; }
 .glyph-loupe .lens circle { fill: var(--paper); fill-opacity: .55; }
 @keyframes look { 0%, 15% { transform: translate(0, 0); } 45% { transform: translate(32px, -6px); } 75% { transform: translate(58px, 4px); } 100% { transform: translate(0, 0); } }
 
+/* Quire: a page gets written, then the sheets gather into a neat stack. */
+.glyph-quire .sheet rect { fill: var(--paper); }
+.glyph-quire .s2, .glyph-quire .s3 { animation: gather 6s ease-in-out infinite; }
+.glyph-quire .s2 { --dx: -8px; --dy: 2px; } .glyph-quire .s3 { --dx: -16px; --dy: 4px; }
+@keyframes gather { 0%, 55% { transform: none; } 70%, 92% { transform: translate(var(--dx), var(--dy)); } 100% { transform: none; } }
+.glyph-quire .ln { stroke-dasharray: 22; stroke-dashoffset: 22; animation: write 6s ease-in-out infinite; }
+.glyph-quire .l2 { animation-delay: .25s; } .glyph-quire .l3 { animation-delay: .5s; } .glyph-quire .l4 { animation-delay: .75s; } .glyph-quire .l5 { animation-delay: 1s; }
+@keyframes write { 0% { stroke-dashoffset: 22; } 18%, 88% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 22; } }
+
 /* ---------- writing ---------- */
 .posts { list-style: none; margin: 0; padding: 0; }
 .posts li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); column-gap: 24px; padding: 16px 0; border-top: 1px solid var(--rule); }
@@ -267,6 +276,7 @@ main { display: block; }
   .signal.playing .signal-row.whole::after { animation: none; display: none; }
   .signal .frame, .signal-chars span { transition: none; }
   .glyph *, .tally li { animation: none !important; transition: none !important; }
+  .glyph-quire .ln { stroke-dashoffset: 0; }
 }
 @media print {
   .masthead nav, .hear, .skip { display: none; }

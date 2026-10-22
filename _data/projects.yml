@@ -25,3 +25,13 @@
   for: For poking around in a spreadsheet to see what's in it.
   open: https://droo-bin.github.io/loupe/
   source: https://github.com/droo-bin/loupe
+
+- name: Quire
+  glyph: quire
+  what: >-
+    A CV builder that runs in your browser. Bring in the CV you've got (PDF, Word or a LinkedIn export),
+    pick a template, tidy the writing with checks that explain themselves, match it to a job advert and
+    download a proper PDF.
+  for: For the CV you've been meaning to update.
+  open: https://droo-bin.github.io/quire/
+  source: https://github.com/droo-bin/quire
